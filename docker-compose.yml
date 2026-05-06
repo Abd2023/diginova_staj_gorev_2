@@ -1,0 +1,7 @@
+services:
+  object-detector-api:
+    build: .
+    container_name: object-detector-api
+    ports:
+      - "7001:7001"
+    platform: linux/arm64
