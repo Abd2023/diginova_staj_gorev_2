@@ -35,9 +35,19 @@ def load_model():
             _le = pickle.loads(f.read())
             
         print("[INFO] Loading object detector model...")
-        _model = torch.load(MODEL_PATH, map_location=DEVICE)
-        _model.eval()
+        from torchvision.models import resnet50
+        baseModel = resnet50(weights=None)
+        _model = ObjectDetector(baseModel, len(_le.classes_))
         
+        state_dict = torch.load(MODEL_PATH, map_location=DEVICE)
+        # If the state_dict was saved with a full model, torch.load returns the model directly.
+        # But if it returns an OrderedDict, it's a state_dict. Let's handle it securely.
+        if isinstance(state_dict, dict):
+            _model.load_state_dict(state_dict)
+        else:
+            _model = state_dict
+            
+        _model.eval()
         print("[INFO] Setting up transforms...")
         _transform = transforms.Compose([
             transforms.ToPILImage(),
