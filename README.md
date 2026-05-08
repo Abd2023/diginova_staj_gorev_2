@@ -61,4 +61,6 @@ Dönen JSON sonucu sınıf etiketini, güven skorunu ve bounding box koordinatla
 
 Bu repoda sadece çıkarım (inference) aşaması için gerekli olan dosyalar bulundurulmuştur. Modelin eğitimiyle ilgili kaynak kodlar veya Jupyter dosyaları yer almamaktadır.
 
-![Screenshot](Screenshot%202026-05-08%20053523.png)
+![Screenshot](Screenshot%202026-05-08%20053523.png) 
+
+.
