@@ -63,4 +63,3 @@ Bu repoda sadece çıkarım (inference) aşaması için gerekli olan dosyalar bu
 
 ![Screenshot](Screenshot%202026-05-08%20053523.png) 
 
-.
